@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import React, { useEffect, useState, useRef } from "react";
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
-
+import { Swiper as SwiperClass } from 'swiper';
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -16,20 +16,18 @@ import { FreeMode, Navigation } from "swiper/modules";
 import Link from "next/link";
 
 const UserList = () => {
-  const swiperRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
 
   useEffect(() => {
-    if (swiperRef.current) {
-      const swiperInstance = swiperRef.current.swiper;
-
+    if (swiperInstance) {
       swiperInstance.on('slideChange', () => {
         setIsBeginning(swiperInstance.isBeginning);
         setIsEnd(swiperInstance.isEnd);
       });
     }
-  }, [swiperRef]);
+  }, [swiperInstance]);
 
   return (
     <div>
@@ -40,7 +38,7 @@ const UserList = () => {
         </div>
 
         <Swiper
-          ref={swiperRef}
+          onSwiper={setSwiperInstance}  
           slidesPerView={4}
           spaceBetween={10}
           freeMode={true}
@@ -60,7 +58,7 @@ const UserList = () => {
                   alt="Sample Image"
                   width={55}
                   height={55}
-                  className="rounded-full  bg-white p-[2px]"
+                  className="rounded-full bg-white p-[2px]"
                 /></Link>
               </div>
             </SwiperSlide>
