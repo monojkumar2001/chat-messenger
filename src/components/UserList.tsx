@@ -12,7 +12,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // Import required modules
-import { FreeMode, Pagination, Navigation } from "swiper/modules";
+import { FreeMode, Navigation } from "swiper/modules";
 import Link from "next/link";
 
 const UserList = () => {

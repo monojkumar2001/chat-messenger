@@ -5,14 +5,14 @@ import { FiPlus } from "react-icons/fi";
 
 const ProfileImageUploader = () => {
   const [imageSrc, setImageSrc] = useState("/assets/images/profile.jpg");
-  const [selectedImage, setSelectedImage] = useState(null);
+  // const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       const imageUrl = URL.createObjectURL(file);
       setImageSrc(imageUrl);
-      setSelectedImage(file);
+      // setSelectedImage(file);
     }
   };
 

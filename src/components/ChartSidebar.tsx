@@ -1,5 +1,4 @@
 import React from "react";
-import UserList from "./UserList";
 import { FaEdit } from "react-icons/fa";
 import { IoSearchSharp } from "react-icons/io5";
 import Image from "next/image";

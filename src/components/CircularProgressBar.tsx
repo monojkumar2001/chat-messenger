@@ -1,8 +1,12 @@
 // components/CircularProgressBar.js
 import React from "react";
 import { FaFolderOpen } from "react-icons/fa6";
-
-const CircularProgressBar = ({ percentage, totalSize, usedSize }) => {
+interface CircularProgressBarProps {
+  percentage: number;
+  totalSize: number;
+  usedSize: number;
+}
+const CircularProgressBar =  ({ percentage, totalSize, usedSize }: CircularProgressBarProps) => {
   const radius = 25;
   const stroke = 3;
   const normalizedRadius = radius - stroke * 2;

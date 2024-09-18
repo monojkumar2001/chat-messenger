@@ -7,10 +7,8 @@ import { MdOutlineWifiCalling } from "react-icons/md";
 import { RiSettingsFill } from "react-icons/ri";
 import { RiLogoutCircleRLine } from "react-icons/ri";
 import Link from "next/link";
-import { FiPlus } from "react-icons/fi";
 import CircularProgressBar from "./CircularProgressBar";
 import ProfileImageUploader from "./ProfileImageUploader";
-import ThemeToggle from "./ThemToggle";
 const Sidebar = () => {
   return (
     <div className=" w-[100px]  min-h-screen bg-white shadow-md">
